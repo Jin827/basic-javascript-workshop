@@ -15,7 +15,7 @@ function firstLetter(inputString) {
 function lastLetter(inputString) {
 
 }
-
+    
 function letterAtPosition(inputString, position) {
 
 }
