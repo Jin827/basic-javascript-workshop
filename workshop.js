@@ -22,6 +22,12 @@ function lastLetter(inputString) {
 }
     
 function letterAtPosition(inputString, position) {
+    if (inputString === undefined){
+        return undefined;
+    }
+    else {
+        return inputString[position]
+    }
 
 }
 
