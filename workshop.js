@@ -32,8 +32,19 @@ function letterAtPosition(inputString, position) {
 }
 
 function addTwoNumbers(num1, num2) {
+    if (isNaN(num1,num2)){
+        return undefined;
+    }
+    
+    else{
+        return num1 + num2;
+    }
 
 }
+
+var answer = addTwoNumbers(3,6);
+console.log(answer);
+
 
 function multiplyTwoNumbers(num1, num2) {
 
