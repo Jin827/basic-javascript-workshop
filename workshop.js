@@ -56,17 +56,17 @@ function calculator(operation, num1, num2) {
     if (operation === "add"){
         return num1 + num2
     }
-    if (operation === "sub"){
+    else if (operation === "sub"){
         return num1 - num2
     } 
-    if (operation === "mult"){
+    else if (operation === "mult"){
         return num1 * num2
     }
-    if (operation === "div"){
+    else if (operation === "div"){
         return num1 / num2
     }
     
-    else if {
+    else {
         return undefined;
     }
 }
@@ -75,8 +75,26 @@ function calculator(operation, num1, num2) {
 
 
 function repeatString(inputString, numRepetitions) {
-
+    if (inputString <= 0){
+        return "";
+    }
+   
+    
+    else if (typeof(inputString) !== "string" || typeof(numRepetitions) !== "number"){
+        return undefined;
+    }
+    
+    else {
+        var temp = "";
+        for(var i=1; i<=numRepetitions; i++){
+            temp += inputString;
+        }
+        console.log(temp);
+        return temp;
+    }
 }
+
+
 
 function reverseString(inputString) {
 
