@@ -97,8 +97,16 @@ function repeatString(inputString, numRepetitions) {
 
 
 function reverseString(inputString) {
-
+    var temp = "";
+    for(var i=inputString.length-1; i>=0; i--){
+        temp += inputString[i]
+    }
+    return temp;
 }
+
+var answer= reverseString("how are you");
+console.log(answer);
+
 
 function longestWord(inputString) {
 
