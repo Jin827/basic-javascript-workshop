@@ -104,11 +104,32 @@ function reverseString(inputString) {
     return temp;
 }
 
-var answer= reverseString("how are you");
-console.log(answer);
+
 
 
 function longestWord(inputString) {
+    var longestWord = "";
+    var words = inputString.split(' ')
+    
+    
+    
+    for(var i=0; i < words.length; i++){
+        //compare words[i] to longestWord
+        
+        if(words[i].length > longestWord.length){
+            longestWord = words[i];
+            console.log(longestWord)
+        }
+        else if( words[i].length === longestWord.length){
+            longestWord = longestWord;
+        }
+        
+        else {
+            //do nothing
+        }
+    }
+    return longestWord;
+    
 
 }
 
