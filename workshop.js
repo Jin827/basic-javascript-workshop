@@ -111,14 +111,12 @@ function longestWord(inputString) {
     var longestWord = "";
     var words = inputString.split(' ')
     
-    
-    
     for(var i=0; i < words.length; i++){
         //compare words[i] to longestWord
         
         if(words[i].length > longestWord.length){
             longestWord = words[i];
-            console.log(longestWord)
+            //console.log(longestWord)
         }
         else if( words[i].length === longestWord.length){
             longestWord = longestWord;
@@ -134,11 +132,28 @@ function longestWord(inputString) {
 }
 
 function capitalize(inputString) {
-
+    if (inputString === ""){
+        return ""
+    }
+    else {
+    var string = inputString.toLowerCase().split(' ');
+    
+    for(var i=0; i< string.length; i++){
+        string[i] = string[i].split('')
+        string[i][0] = string[i][0].toUpperCase()
+        string[i] = string [i].join('')
+    }
+    
+    return string.join(' ');
+    }
+    
 }
 
-function sumOfNumbers(arrayOfNumbers) {
 
+
+
+function sumOfNumbers(arrayOfNumbers) {
+    
 }
 
 function uniqueElements(array1, array2) {
