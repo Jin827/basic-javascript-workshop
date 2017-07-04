@@ -153,15 +153,57 @@ function capitalize(inputString) {
 
 
 function sumOfNumbers(arrayOfNumbers) {
-    
+    var total = 0;
+    for(var i=0; i<arrayOfNumbers.length; i++){
+        
+        if (typeof arrayOfNumbers[i] !== 'number'){
+            total = undefined;
+        }
+        
+        else if (arrayOfNumbers.length === 0) {
+            total = undefined;
+        }
+        
+        else {
+            
+            total += arrayOfNumbers[i];
+            
+        } 
+        
+    }//end of for loop
+    return total
 }
 
 function uniqueElements(array1, array2) {
-
+    if (typeof (array1) !== "object" && typeof (array2) !== "object"){
+        return undefined;
+    }
+    //find what matches, then see where the match is in the array, replace the match with a string, do this for both arrays, concat arrays whose matches are replaced with strings, then remove all strings
+    else {
+        var uniqueArray = [ ];
+        for(var i=0; i<array1.length; i++){
+            for(var j=0; j<array2.length; i++){
+                if (array1[i] !== array2[j]){
+                    uniqueArray.push();
+                }
+            }
+        }
+            
+        
+    }
+    
 }
 
 function isPalindrome(inputString) {
-
+    //lookup RegExp /\W/ on W3, metacharacter
+    var string = inputString.split('').join('')
+    var reverseWord = inputString.split('').reverse().join('')
+    if (string === reverseWord){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 function wrapCharacter(inputString) {
