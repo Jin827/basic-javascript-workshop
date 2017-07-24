@@ -137,14 +137,18 @@ function capitalize(inputString) {
     }
     else {
     var string = inputString.toLowerCase().split(' ');
+    var capString = "";
     
-    for(var i=0; i< string.length; i++){
+    for(var i=0; i<string.length; i++){
+        
         string[i] = string[i].split('')
-        string[i][0] = string[i][0].toUpperCase()
-        string[i] = string [i].join('')
+        string[i][0] =string[i][0].toUpperCase();
+        string[i] = string[i].join('')
     }
     
-    return string.join(' ');
+    capString = string.join(' ')
+    
+    return capString;
     }
     
 }
@@ -157,11 +161,11 @@ function sumOfNumbers(arrayOfNumbers) {
     for(var i=0; i<arrayOfNumbers.length; i++){
         
         if (typeof arrayOfNumbers[i] !== 'number'){
-            total = undefined;
+            return undefined;
         }
         
         else if (arrayOfNumbers.length === 0) {
-            total = undefined;
+            return total ;
         }
         
         else {
@@ -170,34 +174,68 @@ function sumOfNumbers(arrayOfNumbers) {
             
         } 
         
-    }//end of for loop
+    }
     return total
 }
 
+
+
 function uniqueElements(array1, array2) {
+    var match= [];
+    var array3 = [];
+    
     if (typeof (array1) !== "object" && typeof (array2) !== "object"){
         return undefined;
     }
-    //find what matches, then see where the match is in the array, replace the match with a string, do this for both arrays, concat arrays whose matches are replaced with strings, then remove all strings
     else {
-        var uniqueArray = [ ];
-        for(var i=0; i<array1.length; i++){
-            for(var j=0; j<array2.length; i++){
-                if (array1[i] !== array2[j]){
-                    uniqueArray.push();
+        for(var a=0; a<array1.length; a++){
+            for(var b=0; b<array2.length; b++){
+                if(array1[a] === array2[b]){
+                    match.push(array1[a])
                 }
             }
         }
-            
         
+        // console.log(match,"match") 
+        for(var i=0; i<match.length; i++){
+            var index1= array1.indexOf(match[i])
+            var index2= array2.indexOf(match[i])
+            // console.log(index1,"index1")  // 1,2,2 
+            // console.log(index2,"index2")  // 1,2,2
+            
+            array1.splice(index1,1)
+            array2.splice(index2,1)
+        }
+        
+        for(var c=0; c<array1.length; c++){
+            array3.push(array1[c])
+        }
+        for(var d=0; d<array1.length; d++){
+            array3.push(array2[d])
+        }
+        
+        console.log(array1, array2,"array 1&2")
+        // console.log(array3,"array3")
     }
     
+    var sorted=array3.sort(function(a,b){return a-b})
+    console.log(sorted,"using variable,sorted")         // [ 1, 2, 3, 3, 5, 4 ] 
+    return sorted
 }
+uniqueElements([1,3,5,6,8],[2,3,4,6,8]);
+
+
+
 
 function isPalindrome(inputString) {
     //lookup RegExp /\W/ on W3, metacharacter
-    var string = inputString.split('').join('')
-    var reverseWord = inputString.split('').reverse().join('')
+    
+    var regExp = /[^A-Za-z0-9]/g
+    var string = inputString.toLowerCase().replace(regExp,'')
+    
+    console.log(string)
+    
+    var reverseWord = string.split('').reverse().join('')
     if (string === reverseWord){
         return true;
     }
@@ -206,9 +244,13 @@ function isPalindrome(inputString) {
     }
 }
 
-function wrapCharacter(inputString) {
 
+
+function wrapCharacter(inputString) {
+   
 }
+wrapCharacter("Lorem ipsumos dolor sit amet consectetur adipisicing elit. Magni quisquam");
+
 
 function wrapWord(inputString) {
 
